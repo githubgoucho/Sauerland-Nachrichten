@@ -3,7 +3,7 @@ Sauerland Nachrichten - Onsen 2 / AngularJS
 
 ![](resources/screenshots/app-collage.png)
 
-
+### Get a working sample at [Google Play Store](http://www.atlsoft.de/sauerland-nachrichten-app/)  
 
 ### Quick Start
 1. Create a phonegap project using the [PhoneGap Desktop Application](https://github.com/phonegap/phonegap-app-desktop) or the PhoneGap CLI  
