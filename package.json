@@ -1,0 +1,13 @@
+{
+    "name": "org.atlsoft.newsreader",
+    "version": "2.0.0",
+    "displayName": "Sauerland News",
+    "cordova": {
+        "platforms": [
+            "android"
+        ]
+    },
+    "dependencies": {
+        "cordova-android": "~5.1.1"
+    }
+}

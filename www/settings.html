@@ -1,0 +1,152 @@
+<!-- Settings Page -->
+<style>
+a {
+	color:#c4efff;
+	text-decoration: none;
+}
+.list-icon{
+ font-size:2.5em;
+ margin:10px
+}
+li{
+line-height:1.2em; 
+font-size:0.9em;
+}
+#ul-tab {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+	padding: 27px;
+
+border-bottom: #444 solid
+}
+#ul-tab li {
+    float: left;
+    border: 1px solid #000;
+    border-bottom-width: 0;
+    margin: 3px 1px 0px 3px;
+    padding: 2px 2px 0px 2px;
+}
+#mainView {
+	clear: both;
+	padding: 10px 1em;
+	background-color: #444;
+}
+.active {
+    background-color: #444 !important;
+    color: #fff;
+}
+.submit{
+	font-size: 1.3em;
+	padding: 0.2em;
+}
+.my-list-item{
+	border-top: solid 1px #ccc;
+	margin 10px 0 !important;
+	padding: 20px 0;
+}
+.my-list-item-header{
+    background-color: #777 !important;
+	border-top: solid 1px #ccc;
+	margin 10px 0 !important;
+	padding: 20px 0;
+	text-align: left;
+} 
+
+.my-list-item-header input{
+	margin: 0px 20px 0px 20px;
+}
+</style>
+<ons-page ng-controller="SettingsController as settings">
+    <ons-toolbar>
+        <div class="left">
+            <ons-back-button>{{settings.language.Back}}</ons-back-button>
+        </div>
+        <div class="center">{{settings.language.Settings}}</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="myNavigator.popPage({animation: 'lift'});">
+                <ons-icon icon="ion-home"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+
+    <ons-list>
+        <ons-list-header>
+			<ons-row>
+				<ons-col>{{settings.language.FeedCount}} {{settings.feeds.length}}</ons-col>
+				<ons-col>{{settings.language.delete}}</ons-col>
+            </ons-row>
+		</ons-list-header>
+		
+        <ons-list-item ng-repeat="feed in settings.feeds track by $index ">
+			<ons-row>
+                <ons-col class="list-header">{{feed.name}}</ons-col>
+				<ons-col>
+				<ons-icon class="list-icon" style="margin-left: 20px;" icon="ion-ios-close-outline" ng-click="settings.deleteItem($index)"></ons-icon>
+				</ons-col>
+            </ons-row>
+        </ons-list-item>
+    </ons-list>
+	
+    <div id="tabs"> 
+        <ul id="ul-tab">
+            <li ng-repeat="tab in settings.tabs" 
+                ng-click="settings.onClickTab(tab)"><ons-button ng-class="{active:settings.isActiveTab(tab.url)}" >{{tab.title}}</ons-button></li>
+        </ul>
+        <div id="mainView">
+            <div ng-include="settings.currentTab"></div>
+        </div>
+   </div>
+
+	<script type="text/ng-template" id="two.tpl.html">
+    <ons-list>
+	<form>
+        <ons-list-item style="text-align: left;">
+			<ons-row>
+                <ons-col>{{settings.language.name}}</ons-col>
+				<ons-col><input class="submit" type="text" ng-model="feed.name" required /></ons-col>
+            </ons-row>
+			<ons-row>
+				<ons-col>{{settings.language.url}}</ons-col>
+				<ons-col><input class="submit" type="text" ng-model="feed.url" required /></ons-col>
+            </ons-row>
+			<ons-row>
+				<ons-col><input class="submit"  type="submit" ng-click="settings.newFeed(feed)" value="{{settings.language.save}}" /></ons-col>
+            </ons-row>
+       </ons-list-item>
+	</form>
+	</script>
+	
+	<script type="text/ng-template" id="one.tpl.html">
+	<ons-list>
+        <ons-list-item  class="my-list-item-header">
+		<form>
+			<ons-row>
+				<ons-col><input class="submit" type="submit" ng-click="settings.searchFeeds(feed)" value="{{settings.language.Search}}" /></ons-col>
+				<ons-col><input class="submit" type="text" ng-model="feed.query" required /></ons-col>
+            </ons-row>
+		</form>
+		</ons-list-item>
+ 		<form>
+         <ons-list-item class="my-list-item" ng-repeat="feed in settings.results.entries | filter:search">
+			<ons-row class="list">
+			  <ons-col class="list-header" ng-bind-html="feed.title">{{feed.title}}</ons-col>
+			  <ons-col style="margin: 20px 0px;" ng-bind-html="feed.contentSnippet"></ons-col>
+			</ons-row> 
+			<ons-row>
+				<ons-col class="list-header" >{{settings.language.TITLE}} </ons-col>
+				<ons-col><input class="submit" type="text" value="{{feed.name}}" ng-model="feed.name"/></ons-col>
+			</ons-row>
+			<ons-row>
+				<ons-col>
+					<ons-icon class="list-icon right" icon="ion-ios-plus-outline" ng-click="settings.newFeed(feed)"></ons-icon>
+					<ons-icon class="list-icon right" icon="ion-ios-ionic-outline" ng-click="settings.testItem(feed)"></ons-icon>
+				</ons-col>
+			</ons-row>
+        </ons-list-item>	
+		</form>
+    </ons-list>
+ 	</script>
+
+
+</ons-page>

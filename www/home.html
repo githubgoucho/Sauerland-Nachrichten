@@ -1,0 +1,105 @@
+<style>
+img {
+    display: block;
+    max-width: 100%;
+	float:left;
+	margin: 0 30px 30px 0;
+}
+a {
+	color:#c4efff;
+	text-decoration: none;
+}
+.list-header{
+ font-size:1.2em;
+ color:lightblue;
+ cursor:pointer;
+}
+li{
+line-height:1.2em; 
+font-size:0.9em;
+}
+ons-toolbar-button{
+font-size:38px !important;
+}
+h1{
+ font-size:1.3em;
+}
+h2{
+ font-size:1.2em;
+}
+h3{
+ font-size:1.1em;
+}
+.leftBtn{
+	font-size:30px !important;
+}
+</style>
+
+
+<!-- Home Page - Search Criteria -->
+<ons-page ng-controller="MainController as main">
+	<!-- Define a modal popup to show how it's used. Triggered from Help Icon on Main screen -->
+
+	<ons-modal var="modal" ng-click="modal.hide()">
+		<ons-icon id="modalIcon" icon="ion-close" ng-click="modal.hide()"></ons-icon>
+		<h4>{{main.language.HELP_TITLE}}</h4>
+		<p>{{main.language.HELP_TEXT}}</p>
+		<p>RSSFeedReader {{main.version}}</p>
+		<p>&copy;{{main.language.HELP_COPYRIGHT}}</p>
+	</ons-modal>
+    <ons-toolbar>
+		<div class="left">
+            <ons-back-button ng-show="{{main.test}}"  ng-click="myNavigator.popPage( { animation : '-slide' });">
+                {{main.language.Back}}
+            </ons-Back-button>
+            <ons-toolbar-button ng-hide="{{main.test}}" ng-click="app.menu.open()">
+                <ons-icon icon="ion-navicon-round"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+
+        <div class="center outWin">{{main.name}}</div>
+        <div class="right">
+            <ons-toolbar-button class="leftBtn" ng-click="main.plusText()" >
+                <i class="icon ion-plus-circled"></i>
+            </ons-toolbar-button>
+            <ons-toolbar-button class="leftBtn" ng-click="main.minusText()">
+                <i class="icon ion-minus-circled"></i>
+            </ons-toolbar-button>
+            <ons-toolbar-button class="leftBtn" ng-click="modal.show()">
+                <ons-icon icon="ion-help-circled"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+
+    <ons-list>
+        <ons-list-header class="outWin">{{main.language.Search}}</ons-list-header>
+        <ons-list-item style="padding-top: 5px">
+			<ons-row>
+                <ons-col><form><input  id="result" type="text" class="search-input" ng-model="search"></form></ons-col>
+            </ons-row>
+       </ons-list-item>
+
+        <ons-list-item ng-repeat="type in main.feed.items | filter:search | orderBy:'-date'" data-ng-init="init()">
+			<ul class="list outWin">
+			  <li class="list-header" ng-click="main.openUrl(type)">{{type.title}}</li>
+			  <li><lable  ng-show="type.date">{{type.date}}</lable><lable  ng-show="type.author"> | {{type.author.name}}</lable></li>
+			  <li style="margin: 20px 0px; " ng-bind-html="type.content"></li>
+			</ul>
+        </ons-list-item>
+
+
+<!--
+        <ons-list-header>Rating Check</ons-list-header>
+        <ons-list-item>
+            Allow Explicit Results
+            <ons-switch modifier="list-item" ng-model="main.allowExplicit" ng-checked="main.allowExplicit"></ons-switch>
+        </ons-list-item>
+        <ons-list-item style="text-align: center;">
+            <ons-button ng-click="main.getResults()">
+                Get Results!
+            </ons-button>
+        </ons-list-item>
+-->
+
+    </ons-list>
+</ons-page>

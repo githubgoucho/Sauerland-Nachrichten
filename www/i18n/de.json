@@ -1,0 +1,23 @@
+﻿{"language": {
+    "_lang": "de_DE",
+	"Back" : "Zurück",
+	"Search" : "Suche",
+	"TITLE" : "Titel",
+	"HELP_COPYRIGHT":" 2016 ATLsoft",
+	"HELP_TITLE":"Kurzanleitung",
+	"HELP_TEXT":"Das Programm kommt mit einigen vorinstallierten Feeds, die im Menu unter Einstellungen bearbeitet werden können.",
+	"NewsCount":"Anzahl Nachrichten",
+	"all":"alle",
+	"FeedsAvailable":"Verfügbare Feeds",
+	"Feeds":"Feedabos",
+	"Settings":"Einstellungen",
+	"FeedCount":"Anzahl Feeds:",
+	"delete":"löschen",
+	"name":"Name:",
+	"url":"URL:",
+	"save":"speichern",
+	"feedsearch":"Feed suchen",
+	"unknown":"Autor unbekannt",
+	"feedadd":"Feed eintragen"  
+	}
+}

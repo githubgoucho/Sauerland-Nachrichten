@@ -1,0 +1,24 @@
+﻿{
+  "language": {
+    "_lang": "fr_FR",
+	"Back" : "Antérieur",
+	"Search" : "Recherche",
+	"TITLE" : "Titre",
+	"HELP_COPYRIGHT":" 2016 ATLsoft",
+	"HELP_TITLE":"Guide de référence rapide",
+	"HELP_TEXT":"Le programme est livré avec des feeds préinstallés, qui peuvent être modifiés dans le menu sous Paramètres.",
+	"NewsCount":"Nombre Nouvelles",
+	"all":"tous",
+	"FeedsAvailable":"Feeds disponibles",
+	"Feeds":"Feed abonement",
+	"Settings":"Paramètres",
+	"FeedCount":"Nombre Feeds:",
+	"delete":"effacer",
+	"name":"Nom:",
+	"url":"URL:",
+	"save":"sauver",
+	"feedsearch":"Recherche RSS",
+	"unknown":"Auteur inconnu",
+	"feedadd":"Entrer RSS"  
+	}
+}

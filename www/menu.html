@@ -1,0 +1,35 @@
+<!-- Menu Definition Page -->
+<ons-page ng-controller="MenuController as menu">
+
+    <ons-list>
+        <ons-list-header>{{menu.language.NewsCount}}</ons-list-header>
+        <ons-list-item ng-click="menu.setNumResults()">
+            <div class="button-bar center" style="width:140px;">
+                <div class="button-bar__item">
+                    <input type="radio" name="segment-a" ng-model="menu.numResults" ng-value="10" />
+                    <button class="button-bar__button">10</button>
+                </div>
+
+                <div class="button-bar__item">
+                    <input type="radio" name="segment-a" ng-model="menu.numResults" ng-value="50" />
+                    <button class="button-bar__button">50</button>
+                </div>
+
+                <div class="button-bar__item">
+                    <input type="radio" name="segment-a" ng-model="menu.numResults" ng-value="-1" />
+                    <button class="button-bar__button">{{menu.language.all}}</button>
+                </div>
+            </div>
+        </ons-list-item>
+ 
+        <ons-list-header>{{menu.language.FeedsAvailable}}</ons-list-header>
+		<ons-list-item ng-repeat="feed in menu.feeds  track by $index" ng-click="menu.getResults(feed)">
+           <ons-row> {{feed.name}}</ons-row>
+        </ons-list-item>
+
+        <ons-list-item ng-click="app.menu.close(); menu.openSettings('settings')">
+           <ons-icon icon="ion-navicon-round"></ons-icon> {{menu.language.Settings}} 
+        </ons-list-item>
+    </ons-list>
+
+</ons-page>
