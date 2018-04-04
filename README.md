@@ -4,6 +4,7 @@ Sauerland Nachrichten - Onsen 2 / AngularJS
 ![](resources/screenshots/app-collage.png)
 
 
+
 ### Quick Start
 1. Create a phonegap project using the [PhoneGap Desktop Application](https://github.com/phonegap/phonegap-app-desktop) or the PhoneGap CLI  
     `$ phonegap create myApp`
@@ -21,7 +22,7 @@ See the [PhoneGap Docs Quick Start](http://docs.phonegap.com/getting-started/2-i
 ###Use with the PhoneGap CLI
 1. Create a PhoneGap base project
         
-        $ phonegap create mediaApp
+        $ phonegap create myProject
  
 2. Copy the resources from this repo into your project, replacing the www folder and config.xml with this one.    
     
@@ -33,7 +34,7 @@ See the [PhoneGap Docs Quick Start](http://docs.phonegap.com/getting-started/2-i
 ###Use with the Cordova CLI
 1. Create a PhoneGap base project
     
-        $ cordova create mediaApp
+        $ cordova create myProject
     
 2. Copy the resources from this repo into your project, replacing the www folder and config.xml with this one.
     
