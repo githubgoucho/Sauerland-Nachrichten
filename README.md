@@ -7,7 +7,7 @@ Sauerland Nachrichten - Onsen 2 / AngularJS
 
 ### Quick Start
 1. Create a phonegap project using the [PhoneGap Desktop Application](https://github.com/phonegap/phonegap-app-desktop) or the PhoneGap CLI  
-    `$ phonegap create myApp`
+    `$ phonegap create myProject`
 2. Clone/download this project 
 3. Copy the following from this project into to your newly created app project (overwriting the existing)
   - `www` folder 
