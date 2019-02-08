@@ -97,7 +97,7 @@
     "karma-junit-reporter": "^0.2.2",
     "karma-mocha": "^0.1.10",
     "karma-webpack": "~1.6.0",
-    "lodash": "^3.6.0",
+    "lodash": "^4.17.11",
     "mocha": "^2.2.4",
     "node-libs-browser": "^0.5.2",
     "nunjucks": "^2.2.0",
