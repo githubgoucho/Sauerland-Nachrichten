@@ -45,3 +45,5 @@ See the [PhoneGap Docs Quick Start](http://docs.phonegap.com/getting-started/2-i
 4. Run it with your desired platform
  
         $ cordova run ios
+
+That's all
